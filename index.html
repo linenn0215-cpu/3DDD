@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 網頁射擊遊戲</title>
+    <!-- 載入外部自定義樣式 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 遊戲開始前的說明覆蓋層 -->
+    <div id="instructions">
+        <div class="content">
+            <h1>3D 射擊遊戲</h1>
+            <p>點擊畫面開始遊戲！</p>
+            <p>W, A, S, D = 移動 / 空白鍵 = 跳躍</p>
+            <p>滑鼠轉動 = 視角控制 / 滑鼠左鍵 = 射擊</p>
+        </div>
+    </div>
+
+    <!-- 畫面中央的十字準心 -->
+    <div id="crosshair"></div>
+
+    <!-- 玩家 HUD 面板 (血量與彈藥) -->
+    <div id="hud">
+        <div class="hud-item">
+            <span class="label">血量: </span>
+            <div id="hp-container">
+                <div id="hp-bar"></div>
+            </div>
+            <span id="hp-text">100/100</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">彈藥: </span>
+            <span id="ammo-count">30/30</span>
+        </div>
+    </div>
+
+    <!-- 按鍵互動提示 -->
+    <div id="interaction-prompt">按下 [E] 拾取</div>
+
+    <!-- 引入 Three.js (3D 渲染引擎) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- 引入 Cannon.js (物理與碰撞引擎) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <!-- 引入 PointerLockControls (第一人稱視角鎖定控制模組) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+
+    <!-- 載入我們的遊戲邏輯分離模組 -->
+    <script src="js/world.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/weapon.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

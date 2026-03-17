@@ -1,0 +1,7 @@
+[project]
+name = "3d-fps-game"
+version = "0.1.0"
+description = "A web-based 3D FPS game"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
